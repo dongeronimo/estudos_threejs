@@ -20,6 +20,12 @@ export class EngineService implements OnDestroy{
 
   public createScene(canvas: ElementRef<HTMLDivElement>): void{
     this.sistema3d = new Sistema3d(canvas.nativeElement);
+    canvas.nativeElement.addEventListener('click', (ev)=>{
+      const id = this.sistema3d.pick(ev);
+      console.log("Clicou em "+id);
+      const pickedObject = this.sistema3d.scene.getObjectById(id);
+      console.log(pickedObject);
+    });
   }
 
   public loadAssets(): void {
@@ -51,7 +57,7 @@ export class EngineService implements OnDestroy{
 }
 class Sistema3d {
   private camera: Camera;
-  private scene: Scene;
+  public scene: Scene;
   private renderer: WebGLRenderer;
   private mixers: AnimationMixer[] = [];
   private gpuPicker: GPUPicker;
