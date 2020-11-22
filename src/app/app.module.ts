@@ -7,12 +7,17 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { TopToolbarComponent } from './top-toolbar/top-toolbar.component';
 import { EngineComponent } from './engine/engine.component';
-
+import { PickedObjectViewComponent } from './picked-object-view/picked-object-view.component';
+import { CommonModule } from '@angular/common';
+import {MatCardModule} from '@angular/material/card';
+import { CameraDebugViewComponent } from './camera-debug-view/camera-debug-view.component';
 @NgModule({
   declarations: [
     AppComponent,
     TopToolbarComponent,
     EngineComponent,
+    PickedObjectViewComponent,
+    CameraDebugViewComponent,
 
   ],
   imports: [
@@ -21,7 +26,8 @@ import { EngineComponent } from './engine/engine.component';
     MatToolbarModule,
     BrowserModule,
     BrowserAnimationsModule,
-
+    CommonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

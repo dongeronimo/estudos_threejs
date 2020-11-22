@@ -1,0 +1,9 @@
+.scene-and-data {
+    display: flex;
+    flex-direction: row;
+}
+.scene-data-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

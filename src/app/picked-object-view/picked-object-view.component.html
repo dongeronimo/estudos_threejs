@@ -1,0 +1,13 @@
+<mat-card >
+    <mat-card-header>
+        <mat-card-title>Picked Object:</mat-card-title>
+    </mat-card-header>
+    <mat-card-content *ngIf="pickedObject">
+        <div class="body-2">
+            <span>name: </span><span>{{pickedObject.name}}</span>
+        </div>
+        <div class="body-2">
+            <span>type: </span><span>{{pickedObject.type}}</span>
+        </div>
+    </mat-card-content>
+</mat-card>

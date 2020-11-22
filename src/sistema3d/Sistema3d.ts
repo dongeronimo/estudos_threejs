@@ -4,7 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
 import { GPUPicker } from 'three_gpu_picking';
 class Sistema3d {
-    private camera: Camera;
+    public camera: Camera;
     public scene: Scene;
     private renderer: WebGLRenderer;
     private mixers: AnimationMixer[] = [];
