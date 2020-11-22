@@ -11,6 +11,17 @@ import { PickedObjectViewComponent } from './picked-object-view/picked-object-vi
 import { CommonModule } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
 import { CameraDebugViewComponent } from './camera-debug-view/camera-debug-view.component';
+
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { FoobarComponent } from './foobar/foobar.component';
+
+const routes: Routes = [
+  {path: 'foobar', component: FoobarComponent},
+  {path: 'home', component: HomeComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +29,8 @@ import { CameraDebugViewComponent } from './camera-debug-view/camera-debug-view.
     EngineComponent,
     PickedObjectViewComponent,
     CameraDebugViewComponent,
+    HomeComponent,
+    FoobarComponent,
 
   ],
   imports: [
@@ -27,7 +40,8 @@ import { CameraDebugViewComponent } from './camera-debug-view/camera-debug-view.
     BrowserModule,
     BrowserAnimationsModule,
     CommonModule,
-    MatCardModule
+    MatCardModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent]
