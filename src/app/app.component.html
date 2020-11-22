@@ -1,7 +1,11 @@
 <mat-sidenav-container
+    class="app-root"
     (backdropClick)="close('backdrop')">
     <mat-sidenav #sidenav disableClose>
-        <p><button>kkkkkkk</button></p>
+        <div><button (click)="gotoHome()">Home</button></div>
+        <div><button (click)="gotoThreejsAngularIntegration()">Angular-Three Integration</button></div>
+        <div><button (click)="gotoFBXAnimations()">FBX Animations</button></div>
+        <div><button (click)="gotoNavmesh()">Navmesh</button></div>
     </mat-sidenav>
     <mat-sidenav-content>
         <app-top-toolbar [title]="title"

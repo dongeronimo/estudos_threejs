@@ -1,3 +1,4 @@
+import { ThreejsAngularIntegrationViewComponent } from './threejs-angular-integration-view/threejs-angular-integration-view.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { FoobarComponent } from './foobar/foobar.component';
 const routes: Routes = [
   {path: 'foobar', component: FoobarComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'threejs-angular', component: ThreejsAngularIntegrationViewComponent },
   {path: '', redirectTo: '/home', pathMatch: 'full'},
 ];
 
