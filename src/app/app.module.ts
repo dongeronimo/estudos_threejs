@@ -11,7 +11,7 @@ import { PickedObjectViewComponent } from './picked-object-view/picked-object-vi
 import { CommonModule } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
 import { CameraDebugViewComponent } from './camera-debug-view/camera-debug-view.component';
-
+import {MatSidenavModule} from '@angular/material/sidenav'
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { FoobarComponent } from './foobar/foobar.component';
@@ -34,6 +34,7 @@ const routes: Routes = [
 
   ],
   imports: [
+    MatSidenavModule,
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,

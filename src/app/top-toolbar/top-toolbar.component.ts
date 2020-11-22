@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-top-toolbar',
@@ -6,10 +6,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./top-toolbar.component.css']
 })
 export class TopToolbarComponent implements OnInit {
-  @Input() title:string;
+  @Input() title: string;
+  @Output() hamburgerClicked: EventEmitter<void> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggleMenu(): void {
+    this.hamburgerClicked.emit();
+  }
 }

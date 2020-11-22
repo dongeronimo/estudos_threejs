@@ -1,3 +1,14 @@
-<router-outlet>
+<mat-sidenav-container
+    (backdropClick)="close('backdrop')">
+    <mat-sidenav #sidenav disableClose>
+        <p><button>kkkkkkk</button></p>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-top-toolbar [title]="title"
+            (hamburgerClicked)="toggleMenu()"></app-top-toolbar>
+        <router-outlet>
+        </router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
     
-</router-outlet>
