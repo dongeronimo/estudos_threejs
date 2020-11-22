@@ -34,19 +34,18 @@ export class EngineService implements OnDestroy{
       .then(obj => {
         this.sistema3d.insertObjectInScene(obj, 'capoeira');
       })
-      .catch(err=>{
+      .catch(err => {
         console.error(err);
       })
   }
 
   public animate(): void{
     //Me disseram que tem que ser fora do contexto do angular para não dar problemas de desempenho.
-    this.ngZone.runOutsideAngular(()=>{
+    this.ngZone.runOutsideAngular(() => {
       if (document.readyState !== 'loading'){
         this.render();
       }
     });
-    console.log('animate');
   }
 
   private render(): void {

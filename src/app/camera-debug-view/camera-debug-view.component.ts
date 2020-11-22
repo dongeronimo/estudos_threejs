@@ -11,12 +11,12 @@ import * as THREE from 'three';
 export class CameraDebugViewComponent implements OnInit {
   camera: THREE.Camera;
   worldDirection: THREE.Vector3 = new THREE.Vector3();
-  constructor(private viewModel:MyViewModelService) { }
+  constructor(private viewModel: MyViewModelService) { }
 
   ngOnInit(): void {
     this.viewModel.camera.subscribe({ 
       next: (value: THREE.Camera) => {
-        value.getWorldDirection(this.worldDirection)
+        value.getWorldDirection(this.worldDirection);
         this.camera = value;
       }
     });
