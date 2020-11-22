@@ -1,4 +1,13 @@
-
+.scene-and-data {
+    background: red;
+    display: flex;
+    flex-direction: row;
+}
+.scene-data-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
 .app-root {
     width: 100%;
     height: 100%;

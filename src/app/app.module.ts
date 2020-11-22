@@ -33,6 +33,7 @@ const routes: Routes = [
     CameraDebugViewComponent,
     HomeComponent,
     FoobarComponent,
+    ThreejsAngularIntegrationViewComponent,
 
   ],
   imports: [

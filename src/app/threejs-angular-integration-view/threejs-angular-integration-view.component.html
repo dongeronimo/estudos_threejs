@@ -1,3 +1,41 @@
 <div class="scene-and-data">
     <app-engine></app-engine>
+    <div class="scene-data-cards">
+        <app-picked-object-view></app-picked-object-view>
+        <app-camera-debug-view></app-camera-debug-view>
+    </div>
 </div>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Como isso foi feito</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>1) Obter o elemento DOM necessário para o contexto 3d:</p>
+        <p>A Threejs precisa de um elemento DOM onde a canvas 3d será posta ou de uma canvas
+            criada previamente. Para isso eu preciso obter a referência a uma div no angular
+            e então passar para a ThreeJS.</p>
+        <p>Eu criei um componente chamado engine. Ele será onde o mundo 3d será desenhado.
+            A template desse componente é só uma div com uma classe e com uma ref (#rendererElement). A
+            classe existe para garantir que a div vá ter largura e altura, outra exigência da Three.</p>
+        <p>No engine.component.ts eu crio um ElementRef para rendererElement e com isso no ngOnInit eu
+            tenho a div disponível para as próximas etapas.</p>
+        <p>2) Criar o sistema 3d</p>
+        <p>Antes de criar o sistema 3d eu crio um Service, o engine. Esse service é uma luva entre
+            componente Engine e o sistema 3d. Ele é responsável por garantir que quando o service morrer
+            a animação pare (no ngOnDestroy), por encapsular funcionalidades e por começar a renderização.</p>
+        <p>Ele também é responsável por ter o viewModel pra eu poder interagir com o resto da app a
+            partir do mundo 3d. A idéia é que o Sistema3d não esteja ciente que o angular existe.
+        </p>
+        <p>
+            O render do service, que invoca o render do sistema 3d, roda fora do angular (ver animate()).
+            Me foi dito que era para fazer assim para evitar problemas de desempenho. O render, por sua vez,
+            roda continuamente requisitando novos quadros de animação.
+        </p>
+        <p>Dentro do service eu instancio o Sistema 3d usando a div pega pelo componente Engine. O
+            Sistema3d faz o padrão de mundos da three: cria um renderer, pendura o domElement do renderer
+            em um elemento, cria camera, cria luzes, carrega objetos, etc, etc. Em adição à isso uso a
+            biblioteca de gpu picking de https://github.com/bzztbomb/three_js_gpu_picking
+        </p>
+        <p>https://github.com/dongeronimo/estudos_threejs/tree/angular-three-integration</p>
+    </mat-card-content>
+</mat-card>
